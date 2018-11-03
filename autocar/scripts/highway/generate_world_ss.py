@@ -84,17 +84,16 @@ class WorldGenerator:
             ')\n' +\
             'define gc1 position\n' +\
             '(\n' +\
-              '#size [0.65 0.65 0.25]\n' +\
-              '#origin [-0.05 0 0 0]\n' +\
               'size [2.385 1.200 1.000]\n' +\
               'origin [0.792 0.000 0.000 0.000]\n' +\
               'gui_nose 1\n' +\
-              'drive "car"\n' +\
+              '#drive "car"\n' +\
+              'drive "omni"\n' +\
               'localization "gps"\n' +\
               '#odom_error [0.01 0.05 0.01 0.02 0.01 0.02]\n' +\
               'topurg(pose [1.985 0.000 -0.500 0.000])\n' +\
-              'velocity_bounds [-10000 10000 -1 1 -1 1 -90 90 ]	\n' +\
-              'acceleration_bounds [-10000 10000 -1 1 -1 1 -90 90]\n' +\
+              'velocity_bounds [-10000 10000 -10000 10000 -1 1 -90 90 ]	\n' +\
+              'acceleration_bounds [-10000 10000 -10000 10000 -1 1 -90 90]\n' +\
             ')\n' +\
             'define gc2 position\n' +\
             '(\n' +\
@@ -178,7 +177,7 @@ class WorldGenerator:
 
 if __name__=='__main__':
     if len(sys.argv) != 2:
-        print 'Usage: python generate_world.py path2config'
+        print 'Usage: python generate_world.py path2config carOrOmni'
         sys.exit(-1)
 
     worldGen = WorldGenerator(sys.argv[1])

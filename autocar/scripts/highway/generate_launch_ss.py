@@ -75,15 +75,16 @@ class LaunchGenerator:
 
         launch_file += \
         '<!-- teleop control the robot -->\n' +\
-        '<node pkg="autocar" type="controller.py" name="controller_0" respawn="false" output="screen" ns="robot_0" >\n' +\
+        '<node pkg="autocar" type="controller_ss.py" name="controller_0" respawn="false" output="screen" ns="robot_0" >\n' +\
         '<param name="hz" type="int" value="10" />\n' +\
         '<param name="max_speed" type="double" value="5" />\n' +\
         '<param name="min_speed" type="double" value="-5" />\n' +\
         '</node>\n' +\
-        '<node pkg="autocar" type="teleop.py" name="teleop_0" respawn="false" output="screen" ns="robot_0" >\n' +\
+        '<node pkg="autocar" type="teleop_ss.py" name="teleop_0" respawn="false" output="screen" ns="robot_0" >\n' +\
         '<param name="hz" type="int" value="20" />\n' +\
         '<param name="acc" type="double" value="1" />\n' +\
-        '<param name="yaw" type="double" value="0.25" />\n' +\
+        '<param name="yaw" type="double" value="1" />\n' +\
+        '<!--param name="yaw" type="double" value="0.25" [yaw is now used as accX]-->\n' +\
         '</node>\n'
 
         # speed controller for the agent cars
@@ -121,7 +122,7 @@ class LaunchGenerator:
     
 if __name__=='__main__':
     if len(sys.argv) != 2:
-        print 'Usage: python generate_world.py path2config'
+        print 'Usage: python generate_world.py path2config yThetaOrXY'
         sys.exit(-1)
 
     launchGen = LaunchGenerator(sys.argv[1])

@@ -88,7 +88,6 @@
 <param name="hz" type="int" value="20" />
 <param name="acc" type="double" value="1" />
 <param name="yaw" type="double" value="1" />
-<!--param name="yaw" type="double" value="0.25" [yaw is now used as accX]-->
 </node>
 <node pkg="autocar" type="highway_controller.py" name="high_controller" respawn="false" output="screen" >
 <param name="hz" type="int" value="10" />
