@@ -76,7 +76,7 @@ size [200.0 40.0 1.000]
 pose [100.0 20.0 0.000 0.000]
 )
 # throw in the autonomous car
-gc1( pose [10 18.5 0.000 0] name "gc1" color "red")
+gc1( pose [10 21.5 0.000 0] name "gc1" color "red")
 # throw in the agent cars
 gc2( pose [25 18.5 0.0 0] name "gc21" color "green")
 gc2( pose [45 18.5 0.0 0] name "gc22" color "green")

@@ -88,6 +88,11 @@ class LaunchGenerator:
         '</node>\n'
 
         # speed controller for the agent cars
+        # launch_file +=\
+        # '<node pkg="autocar" type="highway_controller_ss.py" name="high_controller" respawn="false" output="screen" >\n' +\
+        # '<param name="hz" type="int" value="10" />\n' +\
+        # '<param name="path2config" type="str" value="$(find autocar)/scripts/highway/future_positions/' + self.world_name + '_poses.json' + '" />\n' +\
+        # '</node>\n'
         launch_file +=\
         '<node pkg="autocar" type="highway_controller.py" name="high_controller" respawn="false" output="screen" >\n' +\
         '<param name="hz" type="int" value="10" />\n' +\

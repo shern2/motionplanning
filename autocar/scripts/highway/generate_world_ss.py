@@ -145,7 +145,7 @@ class WorldGenerator:
             ')\n'
         world_model +=\
         '# throw in the autonomous car\n' +\
-        'gc1( pose [10 18.5 0.000 0] name "gc1" color "red")\n'
+        'gc1( pose [10 21.5 0.000 0] name "gc1" color "red")\n'
         
         world_model += \
         '# throw in the agent cars\n'
