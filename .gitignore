@@ -60,3 +60,5 @@ target/
 autocar/scripts/highway/output_controls/1/
 
 autocar/scripts/highway/output_controls/2/
+
+autocar/scripts/highway/\.ipynb_checkpoints/
