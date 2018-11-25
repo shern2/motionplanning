@@ -52,8 +52,8 @@ class AutoController:
             self.start_game = True
             self.initTime = time() 
             self.index = 0
-            self.vel = 0
-            self.velX= 0
+            self.vX = 0
+            self.vY= 0
             if self.initUpdateVel:
                 self.updateVel = True
                 self.initUpdateVel = False
@@ -69,9 +69,9 @@ class AutoController:
             accX = self.controls[self.index][1]
 
             if self.updateVel:
-                print timeElapsed, self.vel, self.velX
-                self.vel += acc * self.TIME_PER_STEP
-                self.velX+= accX* self.TIME_PER_STEP
+                print timeElapsed, self.vX, self.vY
+                self.vX += acc * self.TIME_PER_STEP
+                self.vY+= accX* self.TIME_PER_STEP
                 self.updateVel = False
             if timeElapsed > self.controls[self.index][2]: #<<<<<<< Modified to [2] as added accX
                 # print 'increase index: ', timeElapsed, self.controls[self.index][1]
@@ -79,17 +79,17 @@ class AutoController:
                 self.updateVel = True
 
         else:
-            self.vel = 0
-            self.velX= 0
+            self.vX = 0
+            self.vY= 0
 
     def run(self):
         while not rospy.is_shutdown():
             if self.start_game:
                 self.updatAccVel()
                 ctr = Twist()
-                ctr.linear.x = self.vel
-                ctr.linear.y = self.velX
-                # ctr.angular.z = self.velX
+                ctr.linear.x = self.vX
+                ctr.linear.y = self.vY
+                # ctr.angular.z = self.vY
                 self.robot_pub.publish(ctr)
 
             sleep(0.0001)

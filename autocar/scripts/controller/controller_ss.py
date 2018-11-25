@@ -129,12 +129,13 @@ class NewtonController:
         self.robot_pub.publish(msg)
 
 if __name__=='__main__':
+    ## NO NEED TO RUN THIS, SINCE ALL ARE SIMULATED IN SCRIPT BEFOREHAND
     rospy.init_node('controller')
 
-    controller = NewtonController()
+    # controller = NewtonController()
 
-    rospy.Subscriber('control_command', controlCommand, controller.command_callback, queue_size=1)
-    rospy.Subscriber('base_pose_ground_truth', Odometry, controller.state_callback, queue_size=1)
-    rospy.Subscriber('highway_game_start', RecordState, controller.gameStarts, queue_size=1)
+    # rospy.Subscriber('control_command', controlCommand, controller.command_callback, queue_size=1)
+    # rospy.Subscriber('base_pose_ground_truth', Odometry, controller.state_callback, queue_size=1)
+    # rospy.Subscriber('highway_game_start', RecordState, controller.gameStarts, queue_size=1)
 
-    controller.run()
+    # controller.run()

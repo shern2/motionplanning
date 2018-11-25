@@ -54,8 +54,8 @@ class Teleop:
 
     def keyboard_loop(self):
         while not rospy.is_shutdown():
-            acc = 0
-            yaw = 0
+            # acc = 0
+            # yaw = 0
 
             keys = pygame.key.get_pressed()
             for event in pygame.event.get():
@@ -67,25 +67,25 @@ class Teleop:
             if(keys[pygame.K_t]):
                 self.send_highway_start(2)
 
-            if(keys[pygame.K_UP]):
-                acc = self.acc
-            elif(keys[pygame.K_DOWN]):
-                acc = -self.acc
-            if(keys[pygame.K_LEFT]):
-                yaw = self.yaw
-            elif(keys[pygame.K_RIGHT]):
-                yaw = -self.yaw
-            if(keys[pygame.K_r]):
-                state = 1
-                self.send_record_state(state)
-            elif(keys[pygame.K_q]):
-                state = 2
-                self.send_record_state(state)
-            elif(keys[pygame.K_p]):
-                state = 0
-                self.send_record_state(state)
+            # if(keys[pygame.K_UP]):
+            #     acc = self.acc
+            # elif(keys[pygame.K_DOWN]):
+            #     acc = -self.acc
+            # if(keys[pygame.K_LEFT]):
+            #     yaw = self.yaw
+            # elif(keys[pygame.K_RIGHT]):
+            #     yaw = -self.yaw
+            # if(keys[pygame.K_r]):
+            #     state = 1
+            #     self.send_record_state(state)
+            # elif(keys[pygame.K_q]):
+            #     state = 2
+            #     self.send_record_state(state)
+            # elif(keys[pygame.K_p]):
+            #     state = 0
+            #     self.send_record_state(state)
 
-            self.send_control(acc, yaw)
+            # self.send_control(acc, yaw)
             self.rate.sleep()  
 
     def send_record_state(self, state):
